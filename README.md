@@ -12,7 +12,7 @@ Run python webscrape.py.
 
 ## Known Issues
 
-The program choked on the team San Jos&eacute State, therefore I used a small subset of teams that did not include San Jos&eacute State to test my program. I'll need to take a look at that.
+The program choked on the team San Jos&eacute; State, therefore I used a small subset of teams that did not include San Jos&eacute; State to test my program. I'll need to take a look at that.
 
 ## Attribution ##
 
