@@ -1,3 +1,4 @@
+import csv
 import sys
 from bs4 import BeautifulSoup
 import urllib2
@@ -27,10 +28,19 @@ def player_list_from_url_map(team_urls):
     return player_list
 
 
+def write_players_to_csv(player_list):
+    """Write player_list to football_player.csv file"""
+    with open("football_player.csv", "w") as players_csv:
+        writer = csv.writer(players_csv)
+        for each_player in player_list:
+            writer.writerow(each_player)
+
+
 def main():
     """Main entry point for the script"""
     team_urls = urls_for_teams(_URL)
     player_list = player_list_from_url_map(team_urls)
+    write_players_to_csv(player_list)
 
 
 if __name__ == '__main__':
