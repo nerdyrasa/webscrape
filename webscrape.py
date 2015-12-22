@@ -41,7 +41,7 @@ def player_list_from_url_map(team_urls):
 
         team_page = urllib.request.urlopen(req).read()
 
-        for row in BeautifulSoup(team_page, 'html.parser').find_all('tr')[2:]:
+        for row in BeautifulSoup(team_page, 'html.parser').find_all('tr'):
             current_row = row.find_all('td')
             player_list.append([e.text for e in current_row])
 
@@ -50,7 +50,7 @@ def player_list_from_url_map(team_urls):
 
 def write_players_to_csv(player_list):
     """Write player_list to football_player.csv file"""
-    with open("football_player.csv", "w") as players_csv:
+    with open("football_player.csv", "w",encoding="utf-8", newline='') as players_csv:
         writer = csv.writer(players_csv)
         for each_player in player_list:
             writer.writerow(each_player)
